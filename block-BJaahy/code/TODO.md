@@ -23,6 +23,7 @@ class Square {
     constructor (side) {
         this._width = side;
         this._height = side;
+        this.numberOfTimes = 0;
     }
     description() {
         alert (`The square is ${this._width} x ${this._height}`)
@@ -31,18 +32,17 @@ class Square {
         return this._width * this._height;
     }
     get area() {
-        return this._width * this._height;
+        this.numberOfTimes++;
+        if(this.numberOfTimes >= 4) {
+            alert(`Upper limit reached`);
+        }else return this._width * this._height;
     }
     set area(value) {
-        this._width = value;
-        this._height = value;
+        this._width = Math.sqrt(value);
+        this._height = Math.sqrt(value);
     }
     static isEqual(square1, square2) {
-        this._sq1Height = square1;
-        this._sq1Width = square1;
-        this._sq2Height = square2;
-        this._sq2Width = square2;
-        return (this._sq1Height * this.sq1Width === this._sq2Height * this.sq2Width);
+        return (square1.area === square2.area);
     }
 }
 
@@ -91,8 +91,8 @@ class User {
         if(name.length <5){
             alert (`Full name should be more than 5 characters`);
         }else {
-            this.first = name.split(" ");
-            this.last = name.split(" ");
+            this.first = name.split(" ")[0];
+            this.last = name.split(" ")[1];
         }
     }
     nameContains(name) {
