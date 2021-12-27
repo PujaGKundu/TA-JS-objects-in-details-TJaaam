@@ -79,7 +79,7 @@ Square.isEqual(sq1, sq2); // False
 
 ```js
 class User {
-    container(firstName, lastName) {
+    constructor(firstName, lastName) {
         this._first = firstName;
         this._last = lastName;
     }
@@ -104,6 +104,6 @@ let user1 = new User("Arya", "Stark");
 user1.fullName;
 user1.nameContains("a");
 let user2 = new User("John", "Snow");
-user1.fullName;
+user2.fullName;
 user2.nameContains("z");
 ```
