@@ -18,6 +18,43 @@
 
 - Check the `isEqual` method and pass the two instance you created above.
 
+```js
+class Square {
+    constructor (side) {
+        this._width = side;
+        this._height = side;
+    }
+    description() {
+        alert (`The square is ${this._width} x ${this._height}`)
+    }
+    calcArea() {
+        return this._width * this._height;
+    }
+    get area() {
+        return this._width * this._height;
+    }
+    set area(value) {
+        this._width = value;
+        this._height = value;
+    }
+    static isEqual(square1, square2) {
+        this._sq1Height = square1;
+        this._sq1Width = square1;
+        this._sq2Height = square2;
+        this._sq2Width = square2;
+        return (this._sq1Height * this.sq1Width === this._sq2Height * this.sq2Width);
+    }
+}
+
+let sq1 = new Square(10);
+sq1.area;
+sq1.calcArea();
+let sq2 = new Square(25);
+sq2.area;
+sq2.calcArea();
+Square.isEqual(sq1, sq2); // False
+```
+
 ## User Class
 
 - Create a `User` class that accepts `firstName` and `lastName` property
@@ -37,3 +74,36 @@
 - Check the `fullName` using getter
 
 - Check the `nameContains` method
+
+
+
+```js
+class User {
+    container(firstName, lastName) {
+        this._first = firstName;
+        this._last = lastName;
+    }
+    get fullName() {
+        this._fullName = `${this._first} ${this._last}`;
+        return this._fullName;
+    }
+    set fullName(name) {
+        if(name.length <5){
+            alert (`Full name should be more than 5 characters`);
+        }else {
+            this.first = name.split(" ");
+            this.last = name.split(" ");
+        }
+    }
+    nameContains(name) {
+        return this.fullName.includes(name);
+    }
+}
+
+let user1 = new User("Arya", "Stark");
+user1.fullName;
+user1.nameContains("a");
+let user2 = new User("John", "Snow");
+user1.fullName;
+user2.nameContains("z");
+```
