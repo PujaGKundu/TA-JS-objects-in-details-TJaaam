@@ -72,14 +72,7 @@ Make sure it does not the changes the original array.
 
 // You code goes here
 Array.prototype.shuffle = function() {
-  let newArray = [];
-  let x = this.length;
-  for (let i = 0; i < x; i++) {
-    let data = Math.floor(Math.random() * x);
-    let counter = this[data];
-    newArray.push(counter);
-  }
-  return newArray;
+  return [...this].sort(() => Math.random() - 0.5);
 };
 
 // Test to check the shuffle method (It will return different output every time you call)
@@ -97,17 +90,12 @@ Unique means no element should come multiple times.
 
 // You code goes here
 Array.prototype.unique = function() {
-  let newArray = [];
-  let x = this.length;
-  for (let i = 0; i < x; i++) {
-    let counter = this[i];
-    for (let j of newArray) {
-      if (j !== counter){
-        console.log(counter+"inner");
-      }      
+  return this.reduce((acc, cv) => {
+    if(!acc.includes(cv)){
+      acc.push(cv);
     }
-  }
-  return newArray;
+    return acc;
+  }, []);
 };
 
 // Test to check the shuffle method (It will return different output every time you call)
@@ -124,14 +112,13 @@ array that will contain only element that is common in both the array.
 */
 
 // You code goes here
-Array.prototype.intersection = function(cb) {
-  let newArray = [];
-  let x = this.length;
-  for (let i = 0; i < x; i++) {
-    let counter = cb(this[i]);
-    newArray.push(counter);
-  }
-  return newArray;
+Array.prototype.intersection = function(arr) {
+  return this.reduce((acc, cv) => {
+    if(arr.includes(cv)){
+      acc.push(cv);
+    }
+    return acc;
+  }, []).unique();
 };
 
 // Test to check the shuffle method (It will return different output every time you call)
@@ -146,14 +133,15 @@ chunk will be the remaining elements. `length` should default to 1.
 */
 
 // You code goes here
-Array.prototype.chunk = function(value) {
+Array.prototype.chunk = function(value = 1) {
+  let arr = [...this];
+  let len = Math.floor(this.length / value);
   let newArray = [];
-  let x = this.length;
-  for (let i = 0; i < x; i++) {
-    let counter = this[i];
-    newArray.push(counter);
+  for (let i = 0; i < len; i++) {
+    let chunk = arr.splice(0, value);
+    newArray.push(chunk);
   }
-  return newArray;
+  return newArray.filter(elm => elm.length);
 };
 
 // Test to check the shuffle method (It will return different output every time you call)
