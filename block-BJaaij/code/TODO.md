@@ -32,11 +32,12 @@ After creating the Book and BookList class create 5 book object and add it to li
 
 ```js
 class Book {
-    constructor(title, category, author, isRead = false) {
+    constructor(title, category, author) {
         this.title = title;
         this.category = category;
         this.author = author;
-        this.isRead = isRead;
+        this.isRead = false;
+        this.finishedDate = null;
     }
     markBookAsRead() {
         this.isRead = true;
@@ -46,16 +47,27 @@ class Book {
 
 
 
-class BookList extends Book{
-    constructor(title, category, author, isRead = false, index) {
-        super (title, category, author, isRead)
-        this.index = index;
+class BookList {
+    constructor() {
+        this.books = [];
+        this.currentIndexBook = 0;
     }
-    add([Book]){
-
+    add(books = []){
+        this.books = this.books.concact(books);
+        return this.books;
     }
     getCurrentBook(){
-        return Book(this.index);
+        return this.books[this.currentIndexBook];
+    }
+    getNextBook(){
+        return this.books[this.currentIndexBook + 1];
+    }
+    getPreviousBook(){
+        return this.books[this.currentIndexBook - 1];
+    }
+    changeCurrentBook(index) {
+        this.currentIndexBook = index;
+        return this.currentIndexBook;
     }
 }
 ```
