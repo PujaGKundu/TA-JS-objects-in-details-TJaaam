@@ -55,8 +55,7 @@ var sandra = personFromPersonStore('Sandra', 26);
 
 // add code here
 personStore.introduce = function() {
-    console.log(`Hi, my name is ${this.name}`)
-  }
+    console.log(`Hi, my name is ${this.name}`);
 }
 // sandra.introduce(); // -> Logs 'Hi, my name is Sandra'
 
