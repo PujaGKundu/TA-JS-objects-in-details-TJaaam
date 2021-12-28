@@ -27,6 +27,22 @@ Getter
 
 - `length`: returns the current length of the stack.
 
+
+
+```js
+class Stack {
+    constructor() {
+        this.stack = [];
+    }
+    push(value) {
+        return this.stack = this.stack + value;
+    }
+    pop(value) {
+        return this.stack = [];
+    }
+}
+```
+
 #### Test
 
 ```js
