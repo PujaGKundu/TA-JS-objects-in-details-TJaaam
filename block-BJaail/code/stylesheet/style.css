@@ -123,14 +123,22 @@ form #button:hover {
   margin: 2rem;
 }
 
-.book-list .read_btn {
+.book-list li h1 {
+  font-size: 1rem;
+}
+
+.book-list li p {
+  font-size: 0.8rem;
+}
+
+.book-list li .read_btn {
   padding: 1rem 1.5rem;
   background-color: #4b234b;
   color: #c6c5cc;
   text-transform: capitalize;
 }
 
-.book-list .read_btn:hover {
+.book-list li .read_btn:hover {
   background-color: black;
   color: white;
 }

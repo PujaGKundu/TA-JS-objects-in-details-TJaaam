@@ -60,15 +60,21 @@ form {
     li {
         text-align: center;
         margin: 2rem;
-    }
-    .read_btn {
-        padding: 1rem 1.5rem;;
-        background-color: rgb(75, 35, 75);
-        color: rgb(198, 197, 204);
-        text-transform: capitalize;
-        &:hover {
-            background-color: black;
-            color: white;
+        h1 {
+            font-size: 1rem;
+        }
+        p {
+            font-size: 0.8rem;
+        }
+        .read_btn {
+            padding: 1rem 1.5rem;;
+            background-color: rgb(75, 35, 75);
+            color: rgb(198, 197, 204);
+            text-transform: capitalize;
+            &:hover {
+                background-color: black;
+                color: white;
+            }
         }
     }
 }
