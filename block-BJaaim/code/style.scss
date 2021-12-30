@@ -1,0 +1,87 @@
+@import "reset";
+
+
+body {
+    box-sizing: border-box;
+    line-height: 1.5;
+    background-color: powderblue;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: salmon;
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+    p {
+        font-size: 2rem;
+    }
+}
+
+.quiz {
+    background-color: peachpuff;
+    padding: 1rem 10px;
+    margin: 2rem auto;
+    width: 600px;
+    form {
+        margin: 0 auto;
+        fieldset {
+            padding: 10px;
+        }
+        p {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.options {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+label {
+    margin-right: 15px;
+    line-height: 32px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+        background: palevioletred;
+        border: none;
+        margin: 2rem;
+        padding: 0.8rem 2rem;
+        border-radius: 2rem;
+        cursor: pointer;
+        &:hover {
+            background-color: purple;
+            color: white;
+        }
+    }
+    .result {
+        visibility: hidden;
+        background-color: olive;
+    }
+} 
+
+.submit {
+    background-color: slategray;
+    border-radius: 2rem;
+    padding: 0.8rem 2rem;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        background-color: snow;
+    }
+}
